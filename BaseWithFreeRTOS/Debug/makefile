@@ -54,7 +54,7 @@ all: BaseWithFreeRTOS.elf
 BaseWithFreeRTOS.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU G++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -T"C:/Users/Sad/workspace/BaseWithFreeRTOS/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "BaseWithFreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -T"C:/Users/Sad/workspace/BaseWithFreeRTOS/BaseWithFreeRTOS/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "BaseWithFreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
